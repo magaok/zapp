@@ -2,37 +2,49 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/common.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
 
-void main() => runApp(new MaterialApp(
-  home: Home(),
+void main() => runApp(MaterialApp(
+  home: CreateRequest(),
 ));
 
-
-class Home extends StatelessWidget {
+class CreateRequest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('My First Flutter App'),
-        backgroundColor: Colors.pink[400],
+      appBar: GradientAppBar(
+        gradient: LinearGradient(
+            colors: [Colors.blue, Colors.purpleAccent]
+        ),
+        title: Text('CREATE REQUEST'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text(
-          'Hey Kamz',
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-          ),
+      body: new Container(
+        padding: new EdgeInsets.all(20.0),
+        child: new ListView(
+          children: <Widget>[
+            new TextField(
+              decoration: InputDecoration(
+                  hintText: 'Request Type',
+                  labelText: 'Enter request type'
+              ),
+            ),
+            new TextField(
+              maxLines: 5,
+              decoration: InputDecoration(
+                hintText: 'Request Description',
+                labelText: 'Enter request description',
+              ),
+            ),
+            new SizedBox(height: 10.0,
+            ),
+            new Container(
+              child: CustomButton( title:'Submit', onPressed: () {}
+              ),
+            ),
+          ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Text(
-          'Click',
-        ),
-        backgroundColor: Colors.pink[400],
       ),
     );
   }
 }
+
 
