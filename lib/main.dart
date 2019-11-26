@@ -17,26 +17,26 @@ class CreateRequest extends StatelessWidget {
         title: Text('CREATE REQUEST'),
         centerTitle: true,
       ),
-      body: new Container(
-        padding: new EdgeInsets.all(20.0),
-        child: new ListView(
+      body: Container(
+        padding: EdgeInsets.all(20.0),
+        child: ListView(
           children: <Widget>[
-            new TextField(
+            TextField(
               decoration: InputDecoration(
                   hintText: 'Request Type',
                   labelText: 'Enter request type'
               ),
             ),
-            new TextField(
+            TextField(
               maxLines: 5,
               decoration: InputDecoration(
                 hintText: 'Request Description',
                 labelText: 'Enter request description',
               ),
             ),
-            new SizedBox(height: 10.0,
+            SizedBox(height: 10.0,
             ),
-            new Container(
+            Container(
               child: CustomButton( title:'Submit', onPressed: () {}
               ),
             ),
